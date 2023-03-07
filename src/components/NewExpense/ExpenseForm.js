@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./ExpenseForm.css";
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
 
   const [titleInputValue, setTitleInputValue] = useState('');
   const [amountInputValue, setAmountInputValue] = useState('');
@@ -28,7 +28,9 @@ const ExpenseForm = () => {
       amount: amountInputValue,
       date: dateInputValue,
     }
-    console.log(formExpenseDate);
+
+    props.onSaveExpenseData(formExpenseDate); // pass data from child to parent
+
     // clear inputs after form submitted
     setTitleInputValue("");
     setAmountInputValue("");
