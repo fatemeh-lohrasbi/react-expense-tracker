@@ -1,5 +1,4 @@
 import AllExpenseItem from "./components/Expenses/AllExpenseItem";
-import ExpenseForm from "./components/NewExpense/ExpenseForm";
 import NewExpense from "./components/NewExpense/NewExpense";
 
 const App = () => {
@@ -32,7 +31,6 @@ const App = () => {
   return (
     <div>
       <NewExpense onAddExpense={AddExpenseHandler} />
-      <ExpenseForm />
       <AllExpenseItem items={expenses} />
 
     </div>
