@@ -1,4 +1,4 @@
-import './NewExpense.css'
+import './NewExpense.css';
 import ExpenseForm from './ExpenseForm';
 const NewExpense = (props) => {
     const saveExpenseDataHandler = (enteredExpenseData) =>{
@@ -6,7 +6,7 @@ const NewExpense = (props) => {
             ...enteredExpenseData,
             id: Math.random().toString(), //it's not a perfect unique id, theoretically we could generate the same value twice, but it's good enough for this demo
         }
-        props.onAddExpense(expenseData);
+        props.onAddExpense(expenseData); // call a function we receive through props
     }
 
     return(

@@ -29,7 +29,7 @@ const ExpenseForm = (props) => {
       date: dateInputValue,
     }
 
-    props.onSaveExpenseData(formExpenseDate); // pass data from child to parent
+    props.onSaveExpenseData(formExpenseDate); // call a function we receive through props
 
     // clear inputs after form submitted
     setTitleInputValue("");
