@@ -1,8 +1,9 @@
-import React, { useState } from "react";
-import "../Expenses/AllExpenseItem.css";
-import ExpenseItem from "../Expenses/ExpenseItem";
+import { useState } from "react";
+
+import ExpenseItem from "./ExpenseItem";
 import Card from "../UI/Card";
 import ExpensesFilter from "./ExpenseFilter";
+import "./AllExpenseItem.css";
 
 const AllExpenseItem = (props) => {
   const [filteredYear, setFilteredYear] = useState("2020");
@@ -20,6 +21,7 @@ const AllExpenseItem = (props) => {
 
       {props.items.map((element) => (
         <ExpenseItem
+          key={element.id}
           title={element.title}
           amount={element.amount}
           date={element.date}

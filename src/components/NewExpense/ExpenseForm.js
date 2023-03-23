@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./ExpenseForm.css";
 
 const ExpenseForm = (props) => {
@@ -26,7 +26,7 @@ const ExpenseForm = (props) => {
     const formExpenseDate = {
       title: titleInputValue,
       amount: amountInputValue,
-      date: dateInputValue,
+      date: new Date(dateInputValue),
     }
 
     props.onSaveExpenseData(formExpenseDate); // call a function we receive through props
