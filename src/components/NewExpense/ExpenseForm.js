@@ -2,12 +2,11 @@ import { useState } from "react";
 import "./ExpenseForm.css";
 
 const ExpenseForm = (props) => {
+  const [titleInputValue, setTitleInputValue] = useState("");
+  const [amountInputValue, setAmountInputValue] = useState("");
+  const [dateInputValue, setDateInputValue] = useState("");
 
-  const [titleInputValue, setTitleInputValue] = useState('');
-  const [amountInputValue, setAmountInputValue] = useState('');
-  const [dateInputValue, setDateInputValue] = useState('');
-
-
+  
   const titleChangeHandler = (event) => {
     setTitleInputValue(event.target.value);
   };
@@ -27,7 +26,7 @@ const ExpenseForm = (props) => {
       title: titleInputValue,
       amount: amountInputValue,
       date: new Date(dateInputValue),
-    }
+    };
 
     props.onSaveExpenseData(formExpenseDate); // call a function we receive through props
 
@@ -35,15 +34,18 @@ const ExpenseForm = (props) => {
     setTitleInputValue("");
     setAmountInputValue("");
     setDateInputValue("");
-  }
-
+  };
 
   return (
     <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
-          <input type="text" value={titleInputValue} onChange={titleChangeHandler} />
+          <input
+            type="text"
+            value={titleInputValue}
+            onChange={titleChangeHandler}
+          />
         </div>
 
         <div className="new-expense__control">
@@ -69,6 +71,7 @@ const ExpenseForm = (props) => {
         </div>
       </div>
       <div className="new-expense__actions">
+        <button type="button" onClick={props.onCancle}>Cancel</button>
         <button type="submit">Add Expense</button>
       </div>
     </form>
